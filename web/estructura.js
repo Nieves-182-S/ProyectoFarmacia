@@ -1,0 +1,1 @@
+/*java script, estructura del programa*/ 
