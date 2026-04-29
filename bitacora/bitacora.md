@@ -16,3 +16,15 @@
 #Dudas
 ¿Porque creación de BD va separado de las tablas?
 Investigué que va en el brief, entonces ¿ahí pongo todo lo que me gutaría que hiciera el sistema que se esta creando?
+
+#28/04/2026
+#Actividades
+-Volví a revisar las tablas entidad-relación para hacer las tablas de la base de datos.
+-Continué con la creación de la base de datos, creando las tablas principales, como usuarios, roles, productos, lotes, etc.
+-Agregué las relaciones de las tablas, como la relación entre usuarios y roles, etc.
+-Continué con el brief, agregando más detalles de las funcionalidades que me gustaría para el sistema.
+#Lo aprendido
+-Repaso de SQL para la creación de tablas y relaciones
+-Importancia de tener un brief detallado para el desarrollo del proyecto
+#Dudas
+¿Cómo agregar la parte de ventas por unidad?
