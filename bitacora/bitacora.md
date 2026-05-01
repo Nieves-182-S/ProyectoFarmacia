@@ -28,3 +28,18 @@ Investigué que va en el brief, entonces ¿ahí pongo todo lo que me gutaría qu
 -Importancia de tener un brief detallado para el desarrollo del proyecto
 #Dudas
 ¿Cómo agregar la parte de ventas por unidad?
+
+#30/04/2026
+#Actividades
+-Terminé de crear las tablas de la base de datos
+-Agregué los roles en inserts
+-Agregué la consulta para ver todo de todas las tablas
+-puse mi paleta de colores, modifiqué algunos archivos
+-Inicié con el diseño en figma
+
+#Lo aprendido
+-La importancia de tener una tabla entidad relacion
+-Consultas con JONS sigo en retroalimentacion
+
+#Dudas
+Para incluir imagenes en la base de datos, ¿es mejor guardar la imagen en una carpeta y guardar la ruta en la base de datos o guardar la imagen directamente en la base de datos?

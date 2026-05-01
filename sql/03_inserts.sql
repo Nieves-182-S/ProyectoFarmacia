@@ -1,4 +1,6 @@
-/* esto es para insertar los datos */
+-- Datos para la base de datos de la farmacia
+-- Insertar roles
+INSERT INTO roles (nombre_rol) VALUES ('Administrador');
+INSERT INTO roles (nombre_rol) VALUES ('Cajero');
 
-INSERT INTO productos (codigo_producto, nombre_producto) 
-VALUES ()
+-- Insertar usuarios

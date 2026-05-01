@@ -1,21 +1,29 @@
 Sistema Farmacia San José
 
+Descripción del proyecto:
+Farmacia San José es un negocio dedicado a la venta de medicamentos y productos para 
+el cuidado de la salud, que busca modernizar sus procesos mediante la implementación 
+de un sistema de gestión digital.
 
-El objetivo de este proyecto es desarrollar un sistema de gestión para la farmacia que nos permita llevar un control eficiente
-de los productos, las ventas y usuarios.
+Objetivo del proyecto:
+Desarrollar un sistema que permita llevar un control eficiente de productos, ventas 
+y usuarios, optimizando los procesos internos y mejorando la atención al cliente.
 
-El sistema de gestión debe ser capaz de manejar la información de los productos, incluyendo su nombre, componentes activos, precio, cantidad en stock,
-fecha de vencimiento, entre otros. Además, debe permitir registrar las ventas realizadas.
+Público objetivo:
+Empleados de la farmacia (cajeros y administrador)
+Personas que acuden a la farmacia en busca de atención rápida, confiable y accesible
 
-El sistema también debe contar con un módulo de administración que permita a los usuarios autorizados agregar, editar, eliminar productos, 
-así como generar reportes de ventas y stock.
+Problema que se busca resolver:
+La gestión manual o poco estructurada de inventarios y ventas puede generar errores, 
+pérdidas de productos, descontrol en el stock y tiempos de atención más largos. El 
+sistema permitirá automatizar estos procesos y reducir errores.
 
-El sistema debe ser fácil de usar y accesible para cualquier persona que trabaje en la farmacia, con o sin experiencia en tecnología. 
-Además, debe ser seguro y proteger la información de los clientes y de la empresa.
+Propuesta de valor:
+Un sistema sencillo, eficiente y seguro que facilita la operación diaria de la farmacia, 
+permitiendo un mejor control y una atención más ágil al cliente.
 
-El sitema debe notificar a los usuarios cuando un producto esté próximo a vencer o cuando el stock esté bajo, 
-para garantizar que la farmacia siempre tenga los productos necesarios disponibles para sus clientes.
-
-El sistema debe sugerir el precio de venta de los productos, basándose en el precio de compra y un margen de ganancia predefinido,
-para ayudar a los usuarios a establecer precios competitivos y rentables, sin embargo, el sistema también debe permitir al administrador
-ajustar manualmente los precios de venta si es necesario, para adaptarse a las condiciones del mercado o a estrategias comerciales.
+Valores de la marca:
+Rapidez
+Seguridad
+Accesibilidad
+Organización
