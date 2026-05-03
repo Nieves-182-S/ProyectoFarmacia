@@ -43,3 +43,14 @@ Investigué que va en el brief, entonces ¿ahí pongo todo lo que me gutaría qu
 
 #Dudas
 Para incluir imagenes en la base de datos, ¿es mejor guardar la imagen en una carpeta y guardar la ruta en la base de datos o guardar la imagen directamente en la base de datos?
+
+#02/05/2026
+#Actividades
+-Terminé la primera pantalla del diseño en figma
+-Agregué datos a la base de datos para probar las consultas posteriormente
+-Agregué otras tablas que se me habían pasado
+
+#Dudas
+¿Podrías revisar la base de datos por si hay algo que no estoy viendo?
+¿Cómo agrego mi tabla entidad relación del proyecto? 
+¿Habrá carpetas para guardar las imágenes?

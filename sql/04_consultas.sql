@@ -7,6 +7,7 @@ SELECT * FROM roles; -- mostrar la lista de roles
 
 SELECT * FROM productos_faltante;
 
+
 -- consultas y filtros para la tabla de usuarios
 SELECT * FROM usuarios; -- mostrar la lista de usuarios
 

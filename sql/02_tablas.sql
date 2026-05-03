@@ -18,10 +18,10 @@ CREATE TABLE producto_faltante (
 -- como cajeros, para que puedan iniciar sesión en el sistema.
 CREATE TABLE usuarios (
     id_usuario INT PRIMARY KEY AUTO_INCREMENT, -- identificador del usuario
+    numero_de_empleado INT NOT NULL UNIQUE, -- numero de empleado que se le asigna a cada empleado
     nombre_usuario VARCHAR(50) NOT NULL, -- nombre
     apellido_paterno_usuario VARCHAR(50) NOT NULL, -- apellido paterno
     apellido_materno_usuario VARCHAR(50), -- apellido materno
-    numero_de_empleado INT NOT NULL UNIQUE, -- numero de empleado que se le asigna a cada empleado
     contrasenia_usuario VARCHAR(100) NOT NULL, -- contrasenia 
     rol_usuario INT, -- llave foranea
 
@@ -44,6 +44,23 @@ CREATE TABLE grupo_control (
     descripcion_grupo_control TEXT NOT NULL  -- Para que sirve el grupo de control
 );
 
+CREATE TABLE tipo_recetas (
+    id_tipo_receta INT PRIMARY KEY AUTO_INCREMENT,
+    nombre_tipo_receta VARCHAR(50) NOT NULL, -- receta general, receta controlada, etc
+    descripcion_tipo_receta TEXT,  -- Para que sirve el tipo de receta, que tipo de productos pertenecen a este tipo de receta
+    requiere_receta BOOLEAN NOT NULL, -- Si el producto requiere receta o no
+    requiere_retencion BOOLEAN NOT NULL -- Si el producto requiere retencion o no
+);
+
+CREATE TABLE recetas (
+    id_receta INT PRIMARY KEY AUTO_INCREMENT,
+    nombre_paciente VARCHAR(100) NOT NULL,
+    nombre_doctor VARCHAR(100) NOT NULL,
+    cedula_profesional_doctor VARCHAR(50),
+    fecha_receta DATE NOT NULL,
+    archivo_receta VARCHAR(255), -- Para almacenar la imagen de la receta
+    observaciones_receta TEXT -- Para que el doctor pueda escribir alguna indicacion adicional
+);
 
 /*En productos*/
 CREATE TABLE productos (
@@ -61,9 +78,11 @@ CREATE TABLE productos (
     presentacion VARCHAR(50) NOT NULL, -- caja, frasco, tubo
     contenido_neto_producto VARCHAR(50) NOT NULL, -- cuantas tabletas, cuantos mL y mg
     precio_venta DECIMAL(10,2) NOT NULL,
+    id_tipo_receta INT, -- llave foranea
 
     FOREIGN KEY (categoria_producto) REFERENCES categoria_producto(id_categoria_producto),
-    FOREIGN KEY (grupo_control) REFERENCES grupo_control(id_grupo_control)
+    FOREIGN KEY (grupo_control) REFERENCES grupo_control(id_grupo_control),
+    FOREIGN KEY (id_tipo_receta) REFERENCES tipo_recetas(id_tipo_receta)
 );
 
 -- esta tabla es para registrar como vienen los medicamentos, es decir, en tabletas o tiras
@@ -87,7 +106,7 @@ CREATE TABLE lote_producto(
     fecha_caducidad DATE, 
     fecha_compra DATE,  --Cuando se adquiere el producto
     precio_compra DECIMAL(10,2) NOT NULL, --El precio con el que se compro
-    stock INT NOT NULL,
+    stock_unidades INT NOT NULL,
 
     FOREIGN KEY (id_producto) REFERENCES productos(id_producto)
 );
@@ -110,10 +129,12 @@ CREATE TABLE detalle_venta (
     id_unidad_producto INT, -- llave foranea
     cantidad INT NOT NULL, -- cuantos productos se vendieron
     precio_unitario DECIMAL(10,2) NOT NULL, --cuanto costo cada unidad
+    id_receta INT,
 
     FOREIGN KEY (id_venta) REFERENCES ventas(id_venta),
     FOREIGN KEY (id_lote) REFERENCES lote_producto(id_lote),
-    FOREIGN KEY (id_unidad_producto) REFERENCES unidad_producto(id_unidad_producto)
+    FOREIGN KEY (id_unidad_producto) REFERENCES unidad_producto(id_unidad_producto),
+    FOREIGN KEY (id_receta) REFERENCES recetas(id_receta)
 );
 
 --tabla de proveedores, por si es necesario registrar estos datos para que el administrador
