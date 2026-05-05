@@ -54,3 +54,13 @@ Para incluir imagenes en la base de datos, ¿es mejor guardar la imagen en una c
 ¿Podrías revisar la base de datos por si hay algo que no estoy viendo?
 ¿Cómo agrego mi tabla entidad relación del proyecto? 
 ¿Habrá carpetas para guardar las imágenes?
+
+#04/05/2026
+#Actividades
+-Modifiqué la base de datos
+-continue con el diseño en figma
+-Terminé los inserts de la base de datos para las pruebas
+-Comencé con las consultas básicas para probar la base de datos
+
+#Dudas
+Por ahora no tengo dudas, pero te mandaré la liga de figma para que me digas que tal ;D
