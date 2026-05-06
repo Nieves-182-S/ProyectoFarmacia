@@ -3,9 +3,30 @@
 INSERT INTO roles (nombre_rol) VALUES ('Administrador');
 INSERT INTO roles (nombre_rol) VALUES ('Cajero');
 
--- Insertar clasificaciones de productos
-INSERT INTO clasificacion_producto (nombre_clasificacion_producto) VALUES ('Genérico');
-INSERT INTO clasificacion_producto (nombre_clasificacion_producto) VALUES ('Patente');
+-- inserar formas farmaceuticas
+INSERT INTO formas_farmaceuticas (nombre_forma_farmaceutica, descripcion_forma_farmaceutica)
+VALUES ('Tableta', 'Forma sólida de medicamento que se administra por vía oral.');
+
+INSERT INTO formas_farmaceuticas (nombre_forma_farmaceutica, descripcion_forma_farmaceutica)
+VALUES ('Cápsula', 'Forma sólida de medicamento que se administra por vía oral, con una cubierta gelatinosa.');
+
+INSERT INTO formas_farmaceuticas (nombre_forma_farmaceutica, descripcion_forma_farmaceutica)
+VALUES ('Suspensión oral', 'Forma líquida de medicamento que se administra por vía oral, con partículas sólidas suspendidas en un líquido.');
+
+INSERT INTO formas_farmaceuticas (nombre_forma_farmaceutica, descripcion_forma_farmaceutica)
+VALUES ('Solución oral', 'Forma líquida de medicamento que se administra por vía oral, con los ingredientes completamente disueltos.');
+
+INSERT INTO formas_farmaceuticas (nombre_forma_farmaceutica, descripcion_forma_farmaceutica)
+VALUES ('Jarabe', 'Forma líquida de medicamento que se administra por vía oral, con un sabor dulce y una consistencia más espesa que la solución oral.');
+
+INSERT INTO formas_farmaceuticas (nombre_forma_farmaceutica, descripcion_forma_farmaceutica)
+VALUES ('Ungüento', 'Forma semisólida de medicamento que se aplica tópicamentEnte para tratar afecciones de la piel.');
+
+INSERT INTO formas_farmaceuticas (nombre_forma_farmaceutica, descripcion_forma_farmaceutica)
+VALUES ('Crema', 'Forma semisólida de medicamento que se aplica tópicamente para tratar afecciones de la piel, con una consistencia más ligera que el ungüento.');
+
+INSERT INTO formas_farmaceuticas (nombre_forma_farmaceutica, descripcion_forma_farmaceutica)
+VALUES ('Solución inyectable', 'Forma líquida de medicamento que se administra por vía parenteral, utilizando una aguja y jeringa.');
 
 -- insertar tipo de productos
 INSERT INTO tipo_producto (nombre_tipo_producto) VALUES ('Medicamento');
@@ -13,6 +34,39 @@ INSERT INTO tipo_producto (nombre_tipo_producto) VALUES ('Cuidado Personal');
 INSERT INTO tipo_producto (nombre_tipo_producto) VALUES ('Belleza');
 INSERT INTO tipo_producto (nombre_tipo_producto) VALUES ('Curación');
 INSERT INTO tipo_producto (nombre_tipo_producto) VALUES ('Dulces');
+
+-- Insertar clasificaciones de productos
+INSERT INTO clasificacion_producto (nombre_clasificacion_producto) VALUES ('Genérico');
+INSERT INTO clasificacion_producto (nombre_clasificacion_producto) VALUES ('Patente');
+
+-- Insertar productos faltantes
+INSERT INTO producto_faltante (nombre_producto_faltante, presentacion_producto_faltante) 
+VALUES ('Clamoxin Junior', 'Suspensión oral (125 mg/5 ml)');
+
+INSERT INTO producto_faltante (nombre_producto_faltante, presentacion_producto_faltante)
+VALUES ('Cefalexina', 'Cápsulas (250 mg)');
+
+INSERT INTO producto_faltante (nombre_producto_faltante, presentacion_producto_faltante)
+VALUES ('Losartan', 'Cápsulas (50 mg)');
+
+INSERT INTO producto_faltante (nombre_producto_faltante, presentacion_producto_faltante)
+VALUES ('Chupon para biberon');
+
+INSERT INTO producto_faltante (nombre_producto_faltante, presentacion_producto_faltante)
+VALUES ('Agua oxigenada', '125 ml');
+
+-- Insertar usuarios
+INSERT INTO usuarios (numero_de_empleado, nombre_usuario, apellido_paterno_usuario, apellido_materno_usuario, 
+contrasenia_usuario, rol_usuario) 
+VALUES (010802, 'Nieves', 'Sánchez', 'Salvador', 'admin123', 1);
+
+INSERT INTO usuarios (numero_de_empleado, nombre_usuario, apellido_paterno_usuario, apellido_materno_usuario, 
+contrasenia_usuario, rol_usuario)
+VALUES (061094, 'Silveria', 'Sánchez', 'Salvador', 'admin123', 1);
+
+INSERT INTO usuarios (numero_de_empleado, nombre_usuario, apellido_paterno_usuario, apellido_materno_usuario, 
+contrasenia_usuario, rol_usuario)
+VALUES (060190, 'Lidia', 'Sánchez', 'Salvador', 'cajero123', 2);
 
 -- INSERTAR CATEGORIAS DE PRODUCTOS
 INSERT INTO categoria_producto (nombre_categoria_producto, descripcion_categoria_producto)
@@ -41,81 +95,27 @@ VALUES ('IV', 'Medicamentos con bajo potencial de abuso, pero que aún pueden ca
 de venta con receta');
 
 -- INSERTAR TIPOS DE RECETAS
-INSERT INTO tipo_recetas (nombre_tipo_receta, descripcion_tipo_receta)
+INSERT INTO tipo_recetas (nombre_tipo_receta, descripcion_tipo_receta, requiere_receta, requiere_retencion)
 VALUES ('Receta General', 'Receta utilizada para medicamentos de venta libre o con receta, 
-sin restricciones especiales.');
+sin restricciones especiales.', FALSE, FALSE);
 
-INSERT INTO tipo_recetas (nombre_tipo_receta, descripcion_tipo_receta)
+INSERT INTO tipo_recetas (nombre_tipo_receta, descripcion_tipo_receta, requiere_receta, requiere_retencion)
 VALUES ('Receta Controlada', 'Receta utilizada para medicamentos que requieren un control especial debido a su 
-potencial de abuso o efectos secundarios');
+potencial de abuso o efectos secundarios', TRUE, TRUE);
 
-INSERT INTO tipo_recetas (nombre_tipo_receta, descripcion_tipo_receta)
-VALUES ('Venta Libre', 'Medicamentos que pueden ser adquiridos sin necesidad de receta médica');
-
--- inserar formas farmaceuticas
-INSERT INTO formas_farmaceuticas (nombre_forma_farmaceutica, descripcion_forma_farmaceutica)
-VALUES ('Tableta', 'Forma sólida de medicamento que se administra por vía oral.');
-
-INSERT INTO formas_farmaceuticas (nombre_forma_farmaceutica, descripcion_forma_farmaceutica)
-VALUES ('Cápsula', 'Forma sólida de medicamento que se administra por vía oral, con una cubierta gelatinosa.');
-
-INSERT INTO formas_farmaceuticas (nombre_forma_farmaceutica, descripcion_forma_farmaceutica)
-VALUES ('Suspensión oral', 'Forma líquida de medicamento que se administra por vía oral, con partículas sólidas suspendidas en un líquido.');
-
-INSERT INTO formas_farmaceuticas (nombre_forma_farmaceutica, descripcion_forma_farmaceutica)
-VALUES ('Solución oral', 'Forma líquida de medicamento que se administra por vía oral, con los ingredientes completamente disueltos.');
-
-INSERT INTO formas_farmaceuticas (nombre_forma_farmaceutica, descripcion_forma_farmaceutica)
-VALUES ('Jarabe', 'Forma líquida de medicamento que se administra por vía oral, con un sabor dulce y una consistencia más espesa que la solución oral.');
-
-INSERT INTO formas_farmaceuticas (nombre_forma_farmaceutica, descripcion_forma_farmaceutica)
-VALUES ('Ungüento', 'Forma semisólida de medicamento que se aplica tópicamentEnte para tratar afecciones de la piel.');
-
-INSERT INTO formas_farmaceuticas (nombre_forma_farmaceutica, descripcion_forma_farmaceutica)
-VALUES ('Crema', 'Forma semisólida de medicamento que se aplica tópicamente para tratar afecciones de la piel, con una consistencia más ligera que el ungüento.');
-
-INSERT INTO formas_farmaceuticas (nombre_forma_farmaceutica, descripcion_forma_farmaceutica)
-VALUES ('Solución inyectable', 'Forma líquida de medicamento que se administra por vía parenteral, utilizando una aguja y jeringa.');
-
--- Insertar usuarios
-INSERT INTO usuarios (numero_de_empleado, nombre_usuario, apellido_paterno_usuario, apellido_materno_usuario, 
-contrasenia_usuario, rol_usuario) 
-VALUES (010802, 'Nieves', 'Sánchez', 'Salvador', 'admin123', 1);
-
-INSERT INTO usuarios (numero_de_empleado, nombre_usuario, apellido_paterno_usuario, apellido_materno_usuario, 
-contrasenia_usuario, rol_usuario)
-VALUES (061094, 'Silveria', 'Sánchez', 'Salvador', 'admin123', 1);
-
-INSERT INTO usuarios (numero_de_empleado, nombre_usuario, apellido_paterno_usuario, apellido_materno_usuario, 
-contrasenia_usuario, rol_usuario)
-VALUES (060190, 'Lidia', 'Sánchez', 'Salvador', 'cajero123', 2);
-
--- Insertar productos faltantes
-INSERT INTO producto_faltante (nombre_producto_faltante, presentacion_producto_faltante) 
-VALUES ('Clamoxin Junior', 'Suspensión oral (125 mg/5 ml)');
-
-INSERT INTO producto_faltante (nombre_producto_faltante, presentacion_producto_faltante)
-VALUES ('Cefalexina', 'Cápsulas (250 mg)');
-
-INSERT INTO producto_faltante (nombre_producto_faltante, presentacion_producto_faltante)
-VALUES ('Losartan', 'Cápsulas (50 mg)');
-
-INSERT INTO producto_faltante (nombre_producto_faltante, presentacion_producto_faltante)
-VALUES ('Chupon para biberon');
-
-INSERT INTO producto_faltante (nombre_producto_faltante, presentacion_producto_faltante)
-VALUES ('Agua oxigenada', '125 ml');
+INSERT INTO tipo_recetas (nombre_tipo_receta, descripcion_tipo_receta, requiere_receta, requiere_retencion)
+VALUES ('Venta Libre', 'Medicamentos que pueden ser adquiridos sin necesidad de receta médica', FALSE, FALSE);
 
 -- INSETAR RECETAS
-INSERT INTO recetas (nombre_paciente_receta, nombre_doctor, direccion_doctor, cedula_profesional_doctor, fecha_receta, archivo_receta, 
+INSERT INTO recetas (nombre_paciente, nombre_doctor, direccion_doctor, cedula_profesional_doctor, fecha_receta, archivo_receta, 
 observaciones_receta, id_tipo_receta)
 VALUES ('Juan Pérez', 'Dr. García', 'Calle 123, Mexico', '123456', '2023-10-01', 'receta1.jpg', 'Paciente con dolor de cabeza', 1);
 
-INSERT INTO recetas (nombre_paciente_receta, nombre_doctor, direccion_doctor, cedula_profesional_doctor, fecha_receta, archivo_receta,
+INSERT INTO recetas (nombre_paciente, nombre_doctor, direccion_doctor, cedula_profesional_doctor, fecha_receta, archivo_receta,
 observaciones_receta, id_tipo_receta)
 VALUES ('María López', 'Dra. Martínez', 'Avenida 456, Mexico', '654321', '2023-10-02', 'receta2.jpg', 'Paciente con infección respiratoria', 2);
 
-INSERT INTO recetas (nombre_paciente_receta, nombre_doctor, direccion_doctor, cedula_profesional_doctor, fecha_receta, archivo_receta,
+INSERT INTO recetas (nombre_paciente, nombre_doctor, direccion_doctor, cedula_profesional_doctor, fecha_receta, archivo_receta,
 observaciones_receta, id_tipo_receta)
 VALUES ('Carlos Sánchez', 'Dr. Rodríguez', 'Boulevard 789, Mexico', '789012', '2023-10-03', 'receta3.jpg', 'Paciente con diabetes tipo 2', 1);
 
@@ -143,26 +143,24 @@ descripcion_producto, id_grupo_control, venta_unitaria,
 contenido_neto_producto, id_tipo_receta, id_forma_farmaceutica)
 VALUES ('7501573900269', 'Quitadol', 'Paracetamol', 'Adultos', 'Caja', 1, 1, 1,
 'Alivio del dolor moderado: de cabeza, denticiones, musculares, cólico menstrual, 
-osteoartritis de articulaciones, malestares resfriado común, fiebre', 3, FALSE, 
-'Tableta', '750 mg', 20.00, 3);
+osteoartritis de articulaciones, malestares resfriado común, fiebre', 1, FALSE, 
+'10 tabletas', 2, 3);
 
 INSERT INTO productos (codigo_producto, nombre_producto, componente_activo_producto,
-uso_producto, id_clasificacion_producto, id_tipo_producto, id_categoria_producto,
-descripcion_producto, id_grupo_control, venta_unitaria, id_forma_farmaceutica,
-contenido_neto_producto, id_tipo_receta)
-VALUES ('7503004908875', 'Acarbosa', 'Acarbosa', 'Adultos', 2, 1, 1,
-'Tratamiento de la diabetes mellitus tipo 2, especialmente en pacientes con sobrepeso u obesidad', 3, FALSE, 1,
-'50 mg', 3);
-3, FALSE,
-'Tableta', '50 mg', 63.00, 3);
+uso_producto, unidad_base, id_clasificacion_producto, id_tipo_producto, id_categoria_producto,
+descripcion_producto, id_grupo_control, venta_unitaria, 
+contenido_neto_producto, id_tipo_receta, id_forma_farmaceutica)
+VALUES ('7503004908875', 'Acarbosa', 'Acarbosa', 'Adultos', 'Caja', 2, 1, 1,
+'Tratamiento de la diabetes mellitus tipo 2, especialmente en pacientes con sobrepeso u obesidad', 2, FALSE,
+'30 tabletas', 2, 2);
 
 INSERT INTO productos (codigo_producto, nombre_producto, componente_activo_producto,
-uso_producto, clasificacion_producto, tipo_producto, categoria_producto,
-descripcion_producto, grupo_control, venta_unitaria, presentacion,
-contenido_neto_producto, precio_venta, id_tipo_receta)
-VALUES ('7702018072439', 'Venus Gillete', 'Adultos', 'Patente', 'Higiene', 4, 
+uso_producto, unidad_base, id_clasificacion_producto, id_tipo_producto, id_categoria_producto,
+descripcion_producto, id_grupo_control, venta_unitaria, 
+contenido_neto_producto, id_tipo_receta, id_forma_farmaceutica)
+VALUES ('7702018072439', 'Venus Gillete', 'Venus Gillete', 'Adultos', '1 pieza', 1, 2, 2,
 'Rastrillo de afeitar para mujeres, con 3 hojas y banda lubricante', 4, TRUE, 
-'Rastrillo', '1 pieza', 35.00, 3);
+'1 pieza', 2, 3);
 
 -- INSERTAR LOTES DE PRODUCTO
 INSERT INTO lote_producto (id_producto, lote_producto, fecha_caducidad, precio_compra, stock_unidades)
@@ -184,22 +182,22 @@ INSERT INTO lote_producto (id_producto, lote_producto, fecha_caducidad, precio_c
 VALUES (3, 'Lote006', '2024-12-31', 22.00, 40);
 
 -- INSERTAR DETALLE COMPRA
-INSERT INTO detalle_compra (id_compra, id_lote, cantidad_comprada, precio_unitario)
+INSERT INTO detalle_compra (id_compra, id_lote, cantidad, precio_unitario)
 VALUES (1, 1, 100, 15.00);
 
-INSERT INTO detalle_compra (id_compra, id_lote, cantidad_comprada, precio_unitario)
+INSERT INTO detalle_compra (id_compra, id_lote, cantidad, precio_unitario)
 VALUES (2, 2, 50, 50.00);
 
-INSERT INTO detalle_compra (id_compra, id_lote, cantidad_comprada, precio_unitario)
+INSERT INTO detalle_compra (id_compra, id_lote, cantidad, precio_unitario)
 VALUES (3, 3, 30, 25.00);
 
-INSERT INTO detalle_compra (id_compra, id_lote, cantidad_comprada, precio_unitario)
+INSERT INTO detalle_compra (id_compra, id_lote, cantidad, precio_unitario)
 VALUES (1, 4, 200, 14.00);
 
-INSERT INTO detalle_compra (id_compra, id_lote, cantidad_comprada, precio_unitario)
+INSERT INTO detalle_compra (id_compra, id_lote, cantidad, precio_unitario)
 VALUES (2, 5, 80, 48.00);
 
-INSERT INTO detalle_compra (id_compra, id_lote, cantidad_comprada, precio_unitario)
+INSERT INTO detalle_compra (id_compra, id_lote, cantidad, precio_unitario)
 VALUES (3, 6, 40, 22.00);
 
 -- INSERTAR UNIDADES DE PRODUCTO

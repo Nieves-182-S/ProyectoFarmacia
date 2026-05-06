@@ -64,3 +64,15 @@ Para incluir imagenes en la base de datos, ¿es mejor guardar la imagen en una c
 
 #Dudas
 Por ahora no tengo dudas, pero te mandaré la liga de figma para que me digas que tal ;D
+
+#05/05/2026
+#Actividades
+-Continué con el diseño en figma
+-Modifiqué los inserets porque me di cuenta que había algunos errores
+-Agregué consultas básicas y concatenaciones, solo seguí el ejemplo del libro
+
+#Lo aprendido
+-Hacer concatenaciones en SQL, me gustó, son como los joins pero en columnas... 
+#Dudas
+¿En el documento de consultas son solo para consultas y filtros, supongo que joins y subconsultas, 
+pero los trigger y procedimientos van en otro documento?
