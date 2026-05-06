@@ -75,3 +75,27 @@ La tabla entidad-relación se puede agregar como imagen dentro de la documentaci
 3.¿Habrá carpetas para guardar las imágenes?
 
 Sí, lo ideal es crear una carpeta específica para las imágenes del proyecto. Por ejemplo, se puede tener una carpeta para imágenes del sistema y otra para documentos como recetas o evidencias. Esto ayuda a mantener todo ordenado y facilita después guardar en la base de datos solo la ruta de cada archivo
+
+#04/05/2026
+#Actividades
+-Modifiqué la base de datos
+-continue con el diseño en figma
+-Terminé los inserts de la base de datos para las pruebas
+-Comencé con las consultas básicas para probar la base de datos
+---------------------------------------------------------------------------------------------
+#Dudas
+Por ahora no tengo dudas, pero te mandaré la liga de figma para que me digas que tal ;D
+
+#05/05/2026
+#Actividades
+-Continué con el diseño en figma
+-Modifiqué los inserets porque me di cuenta que había algunos errores
+-Agregué consultas básicas y concatenaciones, solo seguí el ejemplo del libro
+---------------------------------------------------------------------------------------------
+#Lo aprendido
+-Hacer concatenaciones en SQL, me gustó, son como los joins pero en columnas... 
+#Dudas
+¿En el documento de consultas son solo para consultas y filtros, supongo que joins y subconsultas, 
+pero los trigger y procedimientos van en otro documento?
+
+Sí, el documento de consultas puede usarse solo para consultas y filtros, como SELECT, JOIN y subconsultas. En cambio, los TRIGGER, procedimientos almacenados y funciones conviene ponerlos en otro archivo aparte, para tener mejor organización y diferenciar las consultas de los procesos automáticos de la base de datos.
