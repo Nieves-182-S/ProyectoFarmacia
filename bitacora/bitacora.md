@@ -76,3 +76,15 @@ Por ahora no tengo dudas, pero te mandaré la liga de figma para que me digas qu
 #Dudas
 ¿En el documento de consultas son solo para consultas y filtros, supongo que joins y subconsultas, 
 pero los trigger y procedimientos van en otro documento?
+
+#06/05/2026
+#Actividades
+-Continué con el diseño en figma, ya casi queda la segunda pantalla :(
+-Agregué más consultas a la base de datos.
+-Agregué inserts en la parte de producto_faltante para aumentar la cantidad de solicitudes de productos faltantes.
+-Leí una parte del libro que me enviaste para seguir aprendiendo y hacer una retroalimentación más completa.
+#Lo aprendido
+-Empecé a entender más a fondo sobre concatenaciones, que interesante... 
+#Dudas
+Puedes revisar otra vez la BD y a ver si ya esta mejor o ya bien, una vez que termine las consultas ya podré seguir con 
+la estructura en java, pero esperaré al terminar consultas y autorices :D

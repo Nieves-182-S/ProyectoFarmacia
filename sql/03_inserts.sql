@@ -55,6 +55,27 @@ VALUES ('Chupon para biberon');
 INSERT INTO producto_faltante (nombre_producto_faltante, presentacion_producto_faltante)
 VALUES ('Agua oxigenada', '125 ml');
 
+-- Para aumentar el contador
+INSERT INTO producto_faltante (nombre_producto_faltante, presentacion_producto_faltante)
+VALUES ('Paracetamol Infantil', 'Jarabe')
+ON DUPLICATE KEY UPDATE veces_solicitado = veces_solicitado + 1;
+
+INSERT INTO producto_faltante (nombre_producto_faltante, presentacion_producto_faltante)
+VALUES ('Paracetamol Infantil', 'Jarabe')
+ON DUPLICATE KEY UPDATE veces_solicitado = veces_solicitado + 1;
+
+INSERT INTO producto_faltante (nombre_producto_faltante, presentacion_producto_faltante)
+VALUES ('Clamoxin Junior', 'Cápsulas (250 mg') 
+ON DUPLICATE KEY UPDATE cantidad_solicitada = cantidad_solicitada +1;
+
+INSERT INTO producto_faltante (nombre_producto_faltante, presentacion_producto_faltante)
+VALUES ('Clamoxin Junior', 'Cápsulas (250 mg') 
+ON DUPLICATE KEY UPDATE cantidad_solicitada = cantidad_solicitada +1;
+
+INSERT INTO producto_faltante (nombre_producto_faltante, presentacion_producto_faltante)
+VALUES ('Clamoxin Junior', 'Cápsulas (250 mg') 
+ON DUPLICATE KEY UPDATE cantidad_solicitada = cantidad_solicitada +1;
+
 -- Insertar usuarios
 INSERT INTO usuarios (numero_de_empleado, nombre_usuario, apellido_paterno_usuario, apellido_materno_usuario, 
 contrasenia_usuario, rol_usuario) 
