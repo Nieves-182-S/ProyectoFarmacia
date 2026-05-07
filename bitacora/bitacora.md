@@ -99,3 +99,30 @@ Por ahora no tengo dudas, pero te mandaré la liga de figma para que me digas qu
 pero los trigger y procedimientos van en otro documento?
 
 Sí, el documento de consultas puede usarse solo para consultas y filtros, como SELECT, JOIN y subconsultas. En cambio, los TRIGGER, procedimientos almacenados y funciones conviene ponerlos en otro archivo aparte, para tener mejor organización y diferenciar las consultas de los procesos automáticos de la base de datos.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+#06/05/2026 #Actividades -Continué con el diseño en figma, ya casi queda la segunda pantalla :( -Agregué más consultas a la base de datos. -Agregué inserts en la parte de producto_faltante para aumentar la cantidad de solicitudes de productos faltantes. -Leí una parte del libro que me enviaste para seguir aprendiendo y hacer una retroalimentación más completa. 
+
+#Lo aprendido -Empecé a entender más a fondo sobre concatenaciones, que interesante... #Dudas Puedes revisar otra vez la BD y a ver si ya esta mejor o ya bien, una vez que termine las consultas ya podré seguir con la estructura en java, pero esperaré al terminar consultas y autorices :D
+
+Al revisar nuevamente la base de datos, detecté estos errores puntuales:
+
+    1.-En los inserts de producto_faltante hay un registro donde se indican dos columnas, pero solo se proporciona un valor, por lo que ese insert puede fallar.
+    2.-En algunos inserts para actualizar productos faltantes se intenta modificar una columna que no existe en la tabla, así que esa parte también generaría error.
+    3.-En el archivo de consultas hay una consulta donde el nombre de la tabla producto_faltante está escrito de forma incorrecta.
+    4.-También hay una consulta donde el nombre de la tabla tipo_recetas no coincide con el nombre real creado en la base de datos.
+    5.-Algunos datos de prueba no coinciden del todo con la lógica del sistema, por ejemplo un producto de cuidado personal aparece relacionado como si fuera medicamento.
+    6.-En movimientos de inventario se usan nombres de tipos de movimiento distintos a los que se plantearon originalmente, así que conviene unificarlos.
+    7.-El número de empleado está definido como entero, por lo que si lleva ceros al inicio, esos ceros se pueden perder al guardarse.
+
+En la parte de consultas ya se cubren consultas básicas como mostrar datos, aplicar filtros, hacer búsquedas y usar concatenaciones. Aun así, faltan consultas más funcionales para el punto de venta. Hace falta agregar:
+
+    1.-Consultas con joins para mostrar el detalle completo de ventas.
+    2.-Consultas para ver el inventario actual por producto y por lote.
+    3.-Consultas para productos próximos a caducar.
+    4.-Consultas para promociones activas.
+    5.-Consultas para productos más vendidos.
+    6.-Consultas de compras unidas con proveedor y detalle.
+    7.-Consultas para productos que requieren receta.
+    8.-Revisión de nombres de tablas en algunas consultas para que coincidan con la base de datos real.
