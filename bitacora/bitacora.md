@@ -126,3 +126,5 @@ En la parte de consultas ya se cubren consultas básicas como mostrar datos, apl
     6.-Consultas de compras unidas con proveedor y detalle.
     7.-Consultas para productos que requieren receta.
     8.-Revisión de nombres de tablas en algunas consultas para que coincidan con la base de datos real.
+
+Felicidades, María. En verdad, no lo digo solo porque te quiero, sino porque eres muy brillante. Sigue exigiéndote y avanzando como lo has hecho. Por el momento, hay que modificar estos detalles y, después de eso, ya podremos empezar con la estructura en Java.<3
