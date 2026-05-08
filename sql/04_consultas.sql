@@ -116,8 +116,6 @@ WHERE nombre_producto LIKE '%cabeza%'
 OR componente_activo_producto LIKE '%cabeza%'
 OR descripcion_producto LIKE '%cabeza%';
 
-
-
 -- ###########################################################################################################################
 -- Consulta y filtros para la tabla de lotes de productos
 SELECT * FROM lote_producto;
@@ -141,7 +139,10 @@ AS informacion_unidad FROM unidad_producto;
 -- ###########################################################################################################################
 -- Consulta para movimientos de inventario
 SELECT * FROM movimientos_inventario;
-
+-- concatenar el tipo de movimiento con la cantidad y fecha
+SELECT 
+    CONCAT(tipo_movimiento, ': ', cantidad, ' productos el ', fecha)
+    AS informacion_de_movimiento FROM movimientos_inventario;
 -- ###########################################################################################################################
 -- Consulta y filtros para la tabla de ventas
 SELECT * FROM ventas;
@@ -153,7 +154,10 @@ SELECT * FROM detalle_venta;
 -- ###########################################################################################################################
 -- Consulta y filtros para promociones
 SELECT * FROM promociones;
-
+-- concatenar fecha de inicio y fecha de fin de la promoción con el porcentaje de descuento
+SELECT 
+    CONCAT(porcentaje_descuento, '% de descuento', ': ', 'Promoción del ', fecha_inicio, ' al ', fecha_fin) 
+AS informacion_promocion FROM promociones;
 -- ###########################################################################################################################
 -- Consulta para tipo alertas
 SELECT * FROM tipo_alerta;
@@ -161,5 +165,43 @@ SELECT * FROM tipo_alerta;
 -- ###########################################################################################################################
 -- Consulta y filtros para la tabla de alertas
 SELECT * FROM alertas;
+-- concatenar el mensaje de la alerta con la fecha
+SELECT 
+    CONCAT(mensaje_alerta, ': ', 'Alerta del ', fecha_alerta)
+    AS informacion_alerta FROM alertas;
 
 -- ###########################################################################################################################
+-- consultas, filtros, joins y subconsultas de combinacion de tablas
+-- Consulta para mostrar el nombre del producto, componente activo del producto, su categoría, 
+-- su forma farmacéutica y precio unitario
+SELECT
+    producto.nombre_producto,
+    producto.componente_activo_producto,
+    categoria.nombre_categoria_producto,
+    forma.nombre_forma_farmaceutica,
+    unidad.unidad_producto,
+    unidad.precio_unidad_producto
+
+FROM productos AS producto 
+
+JOIN categoria_producto AS categoria ON producto.id_categoria_producto = categoria.id_categoria_producto
+JOIN formas_farmaceuticas AS forma ON producto.id_forma_farmaceutica = forma.id_forma_farmaceutica
+JOIN unidad_producto AS unidad ON producto.id_producto = unidad.id_producto;
+
+-- Consulta para mostrar el nombre del producto, su cantidad en unidades, su precio unitario y el total de la venta
+SELECT
+    producto.nombre_producto,
+    producto.componente_activo_producto,
+    producto.contenido_neto_producto,
+    forma.nombre_forma_farmaceutica,
+    unidad.unidad_producto,
+    detalle.cantidad,
+    detalle.precio_unitario,
+    (detalle.cantidad * detalle.precio_unitario) AS total_venta
+FROM productos AS producto
+JOIN formas_farmaceuticas AS forma ON producto.id_forma_farmaceutica = forma.id_forma_farmaceutica
+JOIN unidad_producto AS unidad ON producto.id_producto = unidad.id_producto
+JOIN detalle_venta AS detalle ON unidad.id_unidad_producto = detalle.id_unidad_producto
+JOIN ventas AS venta ON detalle.id_venta = venta.id_venta;
+
+-- Consulta para mostrar el nombre del producto, su cantidad en unidades, su precio unitario y el total de la compra así como el de venta y ganancia

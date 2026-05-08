@@ -88,3 +88,9 @@ pero los trigger y procedimientos van en otro documento?
 #Dudas
 Puedes revisar otra vez la BD y a ver si ya esta mejor o ya bien, una vez que termine las consultas ya podré seguir con 
 la estructura en java, pero esperaré al terminar consultas y autorices :D
+
+#07/05/2026
+#Actividades
+-Continué con el diseño en figma, me falta algunos detalles.
+-Agregué más consultas a la base de datos, como consultas con filtros, joins.
+-Leí más del libro para seguir aprendiendo sobre SQL y mejorar mis consultas.

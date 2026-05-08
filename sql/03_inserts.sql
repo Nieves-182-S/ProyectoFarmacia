@@ -305,3 +305,7 @@ VALUES (2, 'El producto Acarbosa está próximo a caducar. Fecha de caducidad: 2
 
 INSERT INTO alertas (id_tipo_alerta, mensaje_alerta, id_producto, fecha_alerta, leida)
 VALUES (3, 'El producto Venus Gillete está faltante. No hay unidades disponibles en stock.', 3, '2023-10-22 12:00:00', FALSE);
+
+-- ###################################################################################################################################
+-- actualización en precio de unidades de producot
+UPDATE unidad_producto SET precio_unidad_producto=63.00 WHERE id_unidad_producto=3;
