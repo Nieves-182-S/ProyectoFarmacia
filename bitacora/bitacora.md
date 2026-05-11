@@ -128,3 +128,17 @@ En la parte de consultas ya se cubren consultas básicas como mostrar datos, apl
     8.-Revisión de nombres de tablas en algunas consultas para que coincidan con la base de datos real.
 
 Felicidades, María. En verdad, no lo digo solo porque te quiero, sino porque eres muy brillante. Sigue exigiéndote y avanzando como lo has hecho. Por el momento, hay que modificar estos detalles y, después de eso, ya podremos empezar con la estructura en Java.<3
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+#07/05/2026
+#Actividades
+-Continué con el diseño en figma, me falta algunos detalles.
+-Agregué más consultas a la base de datos, como consultas con filtros, joins.
+-Leí más del libro para seguir aprendiendo sobre SQL y mejorar mis consultas.
+
+Revisé las consultas nuevas y sí hay avance, pero todavía hay algunos detalles puntuales por corregir. Hay consultas con nombres de tablas incorrectos, por ejemplo productos_faltante en lugar de producto_faltante, y tipo_receta en lugar de tipo_recetas, así que esas fallarían al ejecutarse. También conviene separar los UPDATE del archivo de consultas, para que una cosa sea el bloque de consultas y otra el bloque de modificaciones; así queda más ordenado y después será más fácil programarlo en Java.
+
+Como mejora de SQL, también ayudaría agrupar las consultas por tema y dejar primero las consultas simples, luego los filtros, después las concatenaciones y al final los JOIN. Eso haría el archivo más claro y más fácil de mantener. En general va bien, solo hace falta corregir esos nombres y ordenar mejor el archivo.
+
+Por el moemnto solo eso, pero mmuy bien, sigues sin mandarme lo de figmaaaaaaaaaaaaaaaaaaaa, te pasas, pero bueno, checalo. 
