@@ -183,6 +183,14 @@ VALUES ('7702018072439', 'Venus Gillete', 'Venus Gillete', 'Adultos', '1 pieza',
 'Rastrillo de afeitar para mujeres, con 3 hojas y banda lubricante', 4, TRUE, 
 '1 pieza', 2, 3);
 
+INSERT INTO productos (codigo_producto, nombre_producto, componente_activo_producto,
+uso_producto, unidad_base, id_clasificacion_producto, id_tipo_producto, id_categoria_producto,
+descripcion_producto, id_grupo_control, venta_unitaria,
+contenido_neto_producto, id_tipo_receta, id_forma_farmaceutica)
+VALUES ('75046149', 'Golba', 'Balsamo', 'Niños y adultos', 'Tubo', 1, 1, 1,
+'Balsamo para labios', 1, FALSE,
+'60 ml', 1, 5);
+
 -- INSERTAR LOTES DE PRODUCTO
 INSERT INTO lote_producto (id_producto, lote_producto, fecha_caducidad, precio_compra, stock_unidades)
 VALUES (1, 'Lote001', '2024-12-31', 15.00, 100);

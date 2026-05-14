@@ -94,3 +94,10 @@ la estructura en java, pero esperaré al terminar consultas y autorices :D
 -Continué con el diseño en figma, me falta algunos detalles.
 -Agregué más consultas a la base de datos, como consultas con filtros, joins.
 -Leí más del libro para seguir aprendiendo sobre SQL y mejorar mis consultas.
+
+#13/05/2026
+#Actividades
+- Ordené la parte de consultas como me lo sugeriste.
+- Agregúe más consultas a la base de datos.
+- Ya cambié los nombres que si maracaban error.
+- 
