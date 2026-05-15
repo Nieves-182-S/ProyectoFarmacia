@@ -1,3 +1,26 @@
+-- CONSULTAS IMPORTANTES PARA EL PROOYECO DE LA FARMACIA
+-- Consulta con Joins para mostrar la parte de detalle de ventas
+-- Debe mostrar el subtotal y total de la venta, el nombre del producto, la cantidad vendida, la fecha de venta, el numero de lote, 
+-- el numero de usuario que hizo la venta......
+
+SELECT
+venta.id_venta AS Numero_de_venta,
+producto.nombre_producto AS Nombre_del_producto,
+detalle.cantidad AS Cantidad_vendida,
+detalle.precio_unitario AS Precio_unitario,
+(detalle.cantidad * detalle.precio_unitario) AS Subtotal,
+venta.fecha_venta AS Fecha_de_venta,
+lote.lote_producto AS Numero_de_lote,
+usuario.numero_de_empleado AS Numero_de_usuario
+
+FROM detalle_venta AS detalle
+JOIN ventas AS venta ON detalle.id_venta = venta.id_venta
+JOIN usuarios AS usuario ON venta.id_usuario = usuario.id_usuario
+JOIN lote_producto AS lote ON detalle.id_lote = lote.id_lote
+JOIN productos AS producto ON lote.id_producto = producto.id_producto;
+
+
+-- CONSULTAS DE PRUEBA PARA MI APRENDIZAJE JAJA
 -- Consultas para la base de datos de la farmacia
 -- Consultas basicas para mostrar los datos de cada tabla.
 -- ########################################################################################################################

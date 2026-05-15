@@ -100,4 +100,20 @@ la estructura en java, pero esperaré al terminar consultas y autorices :D
 - Ordené la parte de consultas como me lo sugeriste.
 - Agregúe más consultas a la base de datos.
 - Ya cambié los nombres que si maracaban error.
-- 
+
+#14/05/2026
+#Actividades
+- Revisé la parte de datos para lo de la contraseña
+- Agregué una consulta más de las que me sugeriste de detalle join para mostrar el detalle de las ventas.
+- Separar las consultas basicas con las más importantes.
+- Te comparto la liga de figma https://www.figma.com/design/p1zDec3lUcBKO7ZzVPxg9C/Farmacia?node-id=0-1&m=dev&t=wqzWB7XWW9Q0Tzjg-1
+Me avisas si se puede ver o no vale?
+
+#Lo aprendido
+- Los tipos de datos para las contraseñas
+
+#Dudas
+Me avisas que tal esta la parte de figma, sigo modificando detalles, y lo de la parte de joins para ver detalle de ventas.
+La idea es que el administrador permita dar los datos de usuario y contraseña a los empleados, entonces ahí el sistema no puede registrar
+a otros usuarios pero el administrador si, entonces como le hago para que pase esto? en la realidad solo agrego a la base al 
+administrador para que pueda acceder y crear otros usuarios, pero con lo de la incriptación de contraseñas, ¿cómo le hago?
