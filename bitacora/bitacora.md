@@ -142,3 +142,64 @@ Revisé las consultas nuevas y sí hay avance, pero todavía hay algunos detalle
 Como mejora de SQL, también ayudaría agrupar las consultas por tema y dejar primero las consultas simples, luego los filtros, después las concatenaciones y al final los JOIN. Eso haría el archivo más claro y más fácil de mantener. En general va bien, solo hace falta corregir esos nombres y ordenar mejor el archivo.
 
 Por el moemnto solo eso, pero mmuy bien, sigues sin mandarme lo de figmaaaaaaaaaaaaaaaaaaaa, te pasas, pero bueno, checalo. 
+---------------------------------------------------------------------------------------------
+
+#14/05/2026
+#Actividades
+- Revisé la parte de datos para lo de la contraseña
+- Agregué una consulta más de las que me sugeriste de detalle join para mostrar el detalle de las ventas.
+- Separar las consultas basicas con las más importantes.
+- Te comparto la liga de figma https://www.figma.com/design/p1zDec3lUcBKO7ZzVPxg9C/Farmacia?node-id=0-1&m=dev&t=wqzWB7XWW9Q0Tzjg-1
+Me avisas si se puede ver o no vale?
+
+#Lo aprendido
+- Los tipos de datos para las contraseñas
+---------------------------------------------------------------------------------------------
+
+#Dudas
+Me avisas que tal esta la parte de figma, sigo modificando detalles, y lo de la parte de joins para ver detalle de ventas.
+La idea es que el administrador permita dar los datos de usuario y contraseña a los empleados, entonces ahí el sistema no puede registrar
+a otros usuarios pero el administrador si, entonces como le hago para que pase esto? en la realidad solo agrego a la base al 
+administrador para que pueda acceder y crear otros usuarios, pero con lo de la incriptación de contraseñas, ¿cómo le hago?
+
+Sobre el administrador creando usuarios:
+Sí, la idea es correcta: el sistema debe permitir crear usuarios solo cuando el usuario conectado sea administrador.
+En la base de datos debe haber una sola tabla usuarios con todos los usuarios (admins y empleados).
+El control lo hace la aplicación: solo admin ve la opción “crear usuario” y solo admin puede ejecutar ese insert.
+
+Sobre la encriptación de contraseñas:
+
+En la base de datos no guardas la contraseña en texto plano; guardas el hash.
+En Java o como se hizo en el proyecto del servivio:
+El admin escribe la contraseña del nuevo usuario.
+La aplicación calcula un hash seguro (ej. bcrypt) de esa contraseña.
+Se guarda el hash en contrasenia_usuario.
+Al iniciar sesión, se compara la contraseña ingresada con el hash guardado.
+Entonces la DB almacena una cadena, pero no la contraseña real.
+---------------------------------------------------------------------------------------------
+
+#15/05/2026
+#Actividades
+- Terminé la segunda pantalla del diseño de figma.
+- Agregué una tabla más a la base de datos para encontrar donde va el producto dentro de la farmacia, esto para que cuando se realice una 
+busqueda de un producto, el sistema pueda mostrarle al usuario la ubicación del producto dentro de la farmacia, para facilitarle la búsqueda.
+- Relacioné todas las tablas de esta la nueva tabla a la que corresponde.
+- Agregué inserts para la nueva tabla y modifiqué la tabla de productos para agregar la relacion nueva, así como sus inserts.
+- Empecé la segunda consulta util sugerido por usted, no lo he terminado... 
+---------------------------------------------------------------------------------------------
+#Dudas
+Ya subí la tabla de entidad relación, hay ids que se repiten en las tablas por las relaciones que hay entre las tablas, me gustaria saber si
+eso es un problema para la base de datos, la base la realice con las relaciones importantes para mi pero si me dices que tengo que agregar
+las ids que se fueron también por las relaciones me avisas jaja... descansa, gracias por tu ayuda :D
+
+Sobre IDs repetidos en varias tablas:
+
+No es problema si son llaves foráneas. Es normal que el mismo id_rol aparezca en roles y en usuarios.
+Eso es exactamente cómo funcionan las relaciones: un ID en una tabla principal se refiere desde otra tabla.
+¿Debo agregarlo siempre?
+
+Solo si la tabla necesita esa relación.
+Si una tabla debe referirse a otra, entonces sí: incluye la columna de FK y relaciónala.
+Si no hay relación lógica entre tablas, no agregues IDs solo por “que se repitan”.
+
+---------------------------------------------------------------------------------------------
