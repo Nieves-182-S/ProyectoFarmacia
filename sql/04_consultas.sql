@@ -1,7 +1,7 @@
 -- CONSULTAS IMPORTANTES PARA EL PROOYECO DE LA FARMACIA
 -- Consulta con Joins para mostrar la parte de detalle de ventas
--- Debe mostrar el subtotal y total de la venta, el nombre del producto, la cantidad vendida, la fecha de venta, el numero de lote, 
--- el numero de usuario que hizo la venta......
+-- Muestra el id de venta, el nombre del producto, la cantidad vendida, el precio unitario, el total de venta, la fecha de venta 
+-- y el numero de usuario que hizo la venta......
 
 SELECT
 venta.id_venta AS Numero_de_venta,
@@ -18,6 +18,24 @@ JOIN ventas AS venta ON detalle.id_venta = venta.id_venta
 JOIN usuarios AS usuario ON venta.id_usuario = usuario.id_usuario
 JOIN lote_producto AS lote ON detalle.id_lote = lote.id_lote
 JOIN productos AS producto ON lote.id_producto = producto.id_producto;
+
+
+-- Consulta para ver el inventario actual por producto y por lote.
+-- Muestra el id del producto, el nombre del producto, el codigo de barras, el numero de lote, la fecha de caducidad, el stock en unidades,
+-- el precio de venta y de compra, así como su ubicacion en la farmacia...
+SELECT
+producto.id_producto AS NUMERO_DE_PRODUCTO,
+producto.codigo_producto AS CODIGO_DE_BARRAS,
+producto.nombre_producto AS NOMBRE_DEL_PRODUCTO,
+lote.lote_producto AS NUMERO_DE_LOTE,
+lote.fecha_caducidad AS FECHA_DE_CADUCIDAD,
+lote.stock_unidades AS STOCK_EN_UNIDADES,
+lote.precio_compra AS PRECIO_DE_COMPRA,
+unidad.precio_unidad_producto AS PRECIO_DE_VENTA,
+ubicacion.nombre_ubicacion AS UBICACION_EN_FARMACIA
+ubicacion.numero_estante AS NUMERO_DE_ESTANTE
+    
+FROM 
 
 
 -- CONSULTAS DE PRUEBA PARA MI APRENDIZAJE JAJA

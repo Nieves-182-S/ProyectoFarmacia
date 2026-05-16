@@ -117,3 +117,17 @@ Me avisas que tal esta la parte de figma, sigo modificando detalles, y lo de la 
 La idea es que el administrador permita dar los datos de usuario y contraseña a los empleados, entonces ahí el sistema no puede registrar
 a otros usuarios pero el administrador si, entonces como le hago para que pase esto? en la realidad solo agrego a la base al 
 administrador para que pueda acceder y crear otros usuarios, pero con lo de la incriptación de contraseñas, ¿cómo le hago?
+
+#15/05/2026
+#Actividades
+- Terminé la segunda pantalla del diseño de figma.
+- Agregué una tabla más a la base de datos para encontrar donde va el producto dentro de la farmacia, esto para que cuando se realice una 
+busqueda de un producto, el sistema pueda mostrarle al usuario la ubicación del producto dentro de la farmacia, para facilitarle la búsqueda.
+- Relacioné todas las tablas de esta la nueva tabla a la que corresponde.
+- Agregué inserts para la nueva tabla y modifiqué la tabla de productos para agregar la relacion nueva, así como sus inserts.
+- Empecé la segunda consulta util sugerido por usted, no lo he terminado... 
+
+#Dudas
+Ya subí la tabla de entidad relación, hay ids que se repiten en las tablas por las relaciones que hay entre las tablas, me gustaria saber si
+eso es un problema para la base de datos, la base la realice con las relaciones importantes para mi pero si me dices que tengo que agregar
+las ids que se fueron también por las relaciones me avisas jaja... descansa, gracias por tu ayuda :D

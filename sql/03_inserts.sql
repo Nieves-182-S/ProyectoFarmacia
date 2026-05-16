@@ -115,6 +115,19 @@ INSERT INTO grupo_control (nombre_grupo_control, descripcion_grupo_control)
 VALUES ('IV', 'Medicamentos con bajo potencial de abuso, pero que aún pueden causar dependencia, medicamentos 
 de venta con receta');
 
+-- INSERTAR UBICACION DE PRODUCTOS
+INSERT INTO ubicacion_producto (letra_estante, nivel_estante, id_grupo_control)
+VALUES ('A', 1, 1);
+
+INSERT INTO ubicacion_producto (letra_estante, nivel_estante, id_grupo_control)
+VALUES ('A', 2, 1);
+
+INSERT INTO ubicacion_producto (letra_estante, nivel_estante, id_grupo_control)
+VALUES ('B', 2, 2);
+
+INSERT INTO ubicacion_producto (letra_estante, nivel_estante, id_grupo_control)
+VALUES ('C', 3, 3);
+
 -- INSERTAR TIPOS DE RECETAS
 INSERT INTO tipo_recetas (nombre_tipo_receta, descripcion_tipo_receta, requiere_receta, requiere_retencion)
 VALUES ('Receta General', 'Receta utilizada para medicamentos de venta libre o con receta, 
@@ -161,35 +174,35 @@ VALUES (1, '2023-10-03', 300.00);
 INSERT INTO productos (codigo_producto, nombre_producto, componente_activo_producto, 
 uso_producto, unidad_base, id_clasificacion_producto, id_tipo_producto, id_categoria_producto,
 descripcion_producto, id_grupo_control, venta_unitaria, 
-contenido_neto_producto, id_tipo_receta, id_forma_farmaceutica)
+contenido_neto_producto, id_tipo_receta, id_forma_farmaceutica, id_ubicacion)
 VALUES ('7501573900269', 'Quitadol', 'Paracetamol', 'Adultos', 'Caja', 1, 1, 1,
 'Alivio del dolor moderado: de cabeza, denticiones, musculares, cólico menstrual, 
 osteoartritis de articulaciones, malestares resfriado común, fiebre', 1, FALSE, 
-'10 tabletas', 2, 3);
+'10 tabletas', 2, 3, 1);
 
 INSERT INTO productos (codigo_producto, nombre_producto, componente_activo_producto,
 uso_producto, unidad_base, id_clasificacion_producto, id_tipo_producto, id_categoria_producto,
 descripcion_producto, id_grupo_control, venta_unitaria, 
-contenido_neto_producto, id_tipo_receta, id_forma_farmaceutica)
+contenido_neto_producto, id_tipo_receta, id_forma_farmaceutica, id_ubicacion)
 VALUES ('7503004908875', 'Acarbosa', 'Acarbosa', 'Adultos', 'Caja', 2, 1, 1,
 'Tratamiento de la diabetes mellitus tipo 2, especialmente en pacientes con sobrepeso u obesidad', 2, FALSE,
-'30 tabletas', 2, 2);
+'30 tabletas', 2, 2, 2);
 
 INSERT INTO productos (codigo_producto, nombre_producto, componente_activo_producto,
 uso_producto, unidad_base, id_clasificacion_producto, id_tipo_producto, id_categoria_producto,
 descripcion_producto, id_grupo_control, venta_unitaria, 
-contenido_neto_producto, id_tipo_receta, id_forma_farmaceutica)
+contenido_neto_producto, id_tipo_receta, id_forma_farmaceutica, id_ubicacion)
 VALUES ('7702018072439', 'Venus Gillete', 'Venus Gillete', 'Adultos', '1 pieza', 1, 2, 2,
 'Rastrillo de afeitar para mujeres, con 3 hojas y banda lubricante', 4, TRUE, 
-'1 pieza', 2, 3);
+'1 pieza', 2, 3, 3);
 
 INSERT INTO productos (codigo_producto, nombre_producto, componente_activo_producto,
 uso_producto, unidad_base, id_clasificacion_producto, id_tipo_producto, id_categoria_producto,
 descripcion_producto, id_grupo_control, venta_unitaria,
-contenido_neto_producto, id_tipo_receta, id_forma_farmaceutica)
+contenido_neto_producto, id_tipo_receta, id_forma_farmaceutica, id_ubicacion)
 VALUES ('75046149', 'Golba', 'Balsamo', 'Niños y adultos', 'Tubo', 1, 1, 1,
 'Balsamo para labios', 1, FALSE,
-'60 ml', 1, 5);
+'60 ml', 1, 5, 4);
 
 -- INSERTAR LOTES DE PRODUCTO
 INSERT INTO lote_producto (id_producto, lote_producto, fecha_caducidad, precio_compra, stock_unidades)

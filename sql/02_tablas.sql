@@ -61,6 +61,16 @@ CREATE TABLE grupo_control (
     descripcion_grupo_control TEXT NOT NULL  -- Para que sirve el grupo de control
 );
 
+-- tabla de ubicacion del producto dentro de la farmacia.
+CREATE TABLE ubicacion_producto (
+    id_ubicacion INT PRIMARY KEY AUTO_INCREMENT,
+    letra_estante VARCHAR(5) NOT NULL, -- A, B, C, D, E
+    nivel_estante INT NOT NULL, -- 1, 2, 3, 4, 5
+    id_grupo_control INT, -- llave foranea
+
+    FOREIGN KEY (id_grupo_control) REFERENCES grupo_control(id_grupo_control)
+);
+
 CREATE TABLE tipo_recetas (
     id_tipo_receta INT PRIMARY KEY AUTO_INCREMENT,
     nombre_tipo_receta VARCHAR(50) NOT NULL, -- receta general, receta controlada, etc
@@ -119,13 +129,15 @@ CREATE TABLE productos (
     contenido_neto_producto VARCHAR(50) NOT NULL, -- cuantas tabletas, cuantos mL y mg
     id_tipo_receta INT, -- llave foranea
     id_forma_farmaceutica INT, -- llave foranea
+    id_ubicacion INT, -- llave foranea
 
     FOREIGN KEY (id_categoria_producto) REFERENCES categoria_producto(id_categoria_producto),
     FOREIGN KEY (id_grupo_control) REFERENCES grupo_control(id_grupo_control),
     FOREIGN KEY (id_tipo_receta) REFERENCES tipo_recetas(id_tipo_receta),
     FOREIGN KEY (id_forma_farmaceutica) REFERENCES formas_farmaceuticas(id_forma_farmaceutica),
     FOREIGN KEY (id_tipo_producto) REFERENCES tipo_producto(id_tipo_producto),
-    FOREIGN KEY (id_clasificacion_producto) REFERENCES clasificacion_producto(id_clasificacion_producto)
+    FOREIGN KEY (id_clasificacion_producto) REFERENCES clasificacion_producto(id_clasificacion_producto),
+    FOREIGN KEY (id_ubicacion) REFERENCES ubicacion_producto(id_ubicacion)
 );
 
 -- en lote de producto es porque los productos vienen diferentes tipos de lotes por lo que 
